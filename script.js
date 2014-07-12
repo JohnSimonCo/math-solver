@@ -1,4 +1,4 @@
-angular.module('app', [])
+angular.module('app', ['ngMaterial'])
 .factory('number', function() {
 	return function(operator, number) {
 		if(!operator) return +number;
