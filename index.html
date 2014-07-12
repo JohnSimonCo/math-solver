@@ -3,20 +3,37 @@
 <head>
 	<title>MATH</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
+
 	
+		
 	<link href='https://fonts.googleapis.com/css?family=RobotoDraft:400,500,700,400italic' rel='stylesheet' type='text/css'>
 </head>
 <body>
 	<header class="main-header">
-		<h1>Math Motherfucker</h1>
+		<div class="header-content-container">
+			<h1>Math Motherfucker</h1>
+		</div>
 	</header>
 	
-    <input class="main-input" ng-model="expression">
+	<material-card class="main-material-card">
+
+		<material-content>
+
+			<ig fid="t1" class="material-input-group-theme-light" ng-model="expression"></ig>
+
+		</material-content>
+
+    </material-card>
+
+
+
+
     <div class="result" ng-bind="expression | math"></div>
 
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.min.js"></script>
+	<script type="text/javascript" src="big-ass-angular.js"></script>
+	
 	<script type="text/javascript" src="script.js"></script>
-	<script type="text/javascript" src="https://material.angularjs.org/docs.js"></script>
+	<script type="text/javascript" src="material-js.js"></script>
 
 </body>
 </html>

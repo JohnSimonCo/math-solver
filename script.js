@@ -1,4 +1,4 @@
-angular.module('app', [])
+angular.module('app', ['ngMaterial'])
 .factory('number', function() {
 	return function(operator, number) {
 		if(!operator) return +number;
@@ -52,6 +52,7 @@ angular.module('app', [])
 		return total;
 	}
 })
+<<<<<<< HEAD
 .filter('math', function(multiplication, addition) {
 	return function(expr) {
 		if(expr) {
@@ -60,4 +61,22 @@ angular.module('app', [])
 			return expr;
 		}
 	}
+=======
+.controller('ctrl', function($scope, math) {
+	$scope.calculate = math;
+})
+
+.directive('ig', function() {
+  return {
+    restrict: 'E',
+    replace: true,
+    scope: {
+      fid: '@'
+    },
+    template: '<div class="material-input-group">' +
+                '<label for="{{fid}}">Description</label>' +
+                '<input id="{{fid}}" type="text" ng-model="data.description">' +
+              '</div>',
+  }
+>>>>>>> origin/master
 });
