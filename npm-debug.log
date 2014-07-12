@@ -1,0 +1,53 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'C:\\Program Files\\nodejs\\\\node.exe',
+1 verbose cli   'C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'install',
+1 verbose cli   'dist/material-design' ]
+2 info using npm@1.4.14
+3 info using node@v0.10.29
+4 verbose node symlink C:\Program Files\nodejs\\node.exe
+5 warn package.json angular-animate@1.2.16 No repository field.
+6 verbose cache add [ 'dist/material-design', null ]
+7 verbose cache add name=undefined spec="dist/material-design" args=["dist/material-design",null]
+8 verbose parsed url { protocol: null,
+8 verbose parsed url   slashes: null,
+8 verbose parsed url   auth: null,
+8 verbose parsed url   host: null,
+8 verbose parsed url   port: null,
+8 verbose parsed url   hostname: null,
+8 verbose parsed url   hash: null,
+8 verbose parsed url   search: null,
+8 verbose parsed url   query: null,
+8 verbose parsed url   pathname: 'dist/material-design',
+8 verbose parsed url   path: 'dist/material-design',
+8 verbose parsed url   href: 'dist/material-design' }
+9 silly lockFile 0aa267cb-dist-material-design dist/material-design
+10 verbose lock dist/material-design C:\Users\john\AppData\Roaming\npm-cache\0aa267cb-dist-material-design.lock
+11 info maybeGithub Attempting dist/material-design from git://github.com/dist/material-design
+12 silly lockFile cc2f7baf--github-com-dist-material-design git://github.com/dist/material-design
+13 verbose lock git://github.com/dist/material-design C:\Users\john\AppData\Roaming\npm-cache\cc2f7baf--github-com-dist-material-design.lock
+14 verbose addRemoteGit [ 'git://github.com/dist/material-design', 'master' ]
+15 silly lockFile cc2f7baf--github-com-dist-material-design git://github.com/dist/material-design
+16 silly lockFile cc2f7baf--github-com-dist-material-design git://github.com/dist/material-design
+17 info maybeGithub Attempting dist/material-design from git+ssh://git@github.com:dist/material-design
+18 silly lockFile 74a1ed38--github-com-dist-material-design git@github.com:dist/material-design
+19 verbose lock git@github.com:dist/material-design C:\Users\john\AppData\Roaming\npm-cache\74a1ed38--github-com-dist-material-design.lock
+20 verbose addRemoteGit [ 'git@github.com:dist/material-design', 'master' ]
+21 silly lockFile 74a1ed38--github-com-dist-material-design git@github.com:dist/material-design
+22 silly lockFile 74a1ed38--github-com-dist-material-design git@github.com:dist/material-design
+23 silly lockFile 0aa267cb-dist-material-design dist/material-design
+24 silly lockFile 0aa267cb-dist-material-design dist/material-design
+25 error addLocal Could not install dist/material-design
+26 error Error: ENOENT, stat 'C:\Users\john\Documents\Github\math-solver\dist\material-design'
+27 error If you need help, you may report this *entire* log,
+27 error including the npm and node versions, at:
+27 error     <http://github.com/npm/npm/issues>
+28 error System Windows_NT 6.1.7601
+29 error command "C:\\Program Files\\nodejs\\\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "install" "dist/material-design"
+30 error cwd C:\Users\john\Documents\Github\math-solver
+31 error node -v v0.10.29
+32 error npm -v 1.4.14
+33 error path C:\Users\john\Documents\Github\math-solver\dist\material-design
+34 error code ENOENT
+35 error errno 34
+36 verbose exit [ 34, true ]

@@ -3,12 +3,20 @@
 <head>
 	<title>MATH</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
-	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.min.js"></script>
-	<script type="text/javascript" src="script.js"></script>
+	
+	<link href='https://fonts.googleapis.com/css?family=RobotoDraft:400,500,700,400italic' rel='stylesheet' type='text/css'>
 </head>
 <body>
-	<h1>MATH MADDAFAKKA</h1>
-    <input ng-model="expression">
-    <div ng-bind="expression | math"></div>
+	<header class="main-header">
+		<h1>Math Motherfucker</h1>
+	</header>
+	
+    <input class="main-input" ng-model="expression">
+    <div class="result" ng-bind="expression | math"></div>
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.min.js"></script>
+	<script type="text/javascript" src="script.js"></script>
+	<script type="text/javascript" src="https://material.angularjs.org/docs.js"></script>
+
 </body>
 </html>
