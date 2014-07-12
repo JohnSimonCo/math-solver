@@ -1,19 +1,40 @@
 angular.module('app', [])
-.filter('math', function() {
-	return function(expression) {
-		var total = 0, regexp = /(^|[+\-]+)(\d+)/g, match, operator, term;
-		while((match = regexp.exec(expression))) {
-			operator = match[1] || '+';
-			term = +match[2];
+.factory('number', function() {
+	return function(operator, number) {
+		if(!operator) return +number;
 
-			switch(operator) {
-				case '+':
-					total += term;
-					break;
-				case '-':
-					total -= term;
-					break;
+		while(operator.length > 1) {
+			operator = operator
+						.replace(/\+\+|\-\-/g, '+')
+						.replace(/\+\-|\-\+/g, '-');
+		}
+		switch(operator) {
+			case '+':
+				return +number;
+			case '-':
+				return -number;
+		};
+	}
+})
+.factory('numberString', function() {
+	return function(number) {
+		if(number >= 0) return '+' + number;
+	}
+})
+.factory('multiplication', function(number, numberString) {
+	return function(expr) {
+		return expr.replace(/(?:^|[+\-]+)\d+(?:[*\/](?:[+\-]+)?\d+)+/g, function(expr) {
+			var total = 0, regexp = /(^|[+\-]+)(\d+)/g, match;
+			while((match = regexp.exec(expr))) {
 			}
+		});
+	}
+})
+.filter('math', function(number) {
+	return function(expr) {
+		var total = 0, regexp = /(^|[+\-]+)(\d+)/g, match;
+		while((match = regexp.exec(expr))) {
+			total += number(match[1], match[2]);
 		}
 		return total;
 	}
