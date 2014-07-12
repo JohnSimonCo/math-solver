@@ -66,10 +66,11 @@ angular.module('app', ['ngMaterial'])
     restrict: 'E',
     replace: true,
     scope: {
+      hint: '@',
       fid: '@'
     },
     template: '<div class="material-input-group">' +
-                '<label for="{{fid}}">Description</label>' +
+                '<label for="{{fid}}">{{hint}}</label>' +
                 '<input id="{{fid}}" type="text" ng-model="data.description">' +
               '</div>',
   }
