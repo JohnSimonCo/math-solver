@@ -18,19 +18,32 @@ angular.module('app', [])
 })
 .factory('numberString', function() {
 	return function(number) {
-		if(number >= 0) return '+' + number;
+		return number < 0 ? number : '+' + number;
 	}
 })
 .factory('multiplication', function(number, numberString) {
 	return function(expr) {
 		return expr.replace(/(?:^|[+\-]+)\d+(?:[*\/](?:[+\-]+)?\d+)+/g, function(expr) {
-			var total = 0, regexp = /(^|[+\-]+)(\d+)/g, match;
+			var total, regexp = /([*\/])?(^|[\+\-]+)?(\d+)/g, match, nr;
+
+			match = regexp.exec(expr);
+			total = number(match[2], match[3]);
 			while((match = regexp.exec(expr))) {
+				nr = number(match[2], match[3]);
+				switch(match[1]) {
+					case '*':
+						total *= nr;
+						continue;
+					case '/':
+						total /= nr;
+						continue;
+				}
 			}
+			return numberString(total);
 		});
 	}
 })
-.filter('math', function(number) {
+.factory('addition', function(number) {
 	return function(expr) {
 		var total = 0, regexp = /(^|[+\-]+)(\d+)/g, match;
 		while((match = regexp.exec(expr))) {
@@ -39,6 +52,12 @@ angular.module('app', [])
 		return total;
 	}
 })
-.controller('ctrl', function($scope, math) {
-	$scope.calculate = math;
-})
+.filter('math', function(multiplication, addition) {
+	return function(expr) {
+		if(expr) {
+			expr = multiplication(expr);
+			expr = addition(expr);
+			return expr;
+		}
+	}
+});
