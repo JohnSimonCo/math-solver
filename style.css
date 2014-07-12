@@ -14,11 +14,37 @@ body {
 	height: 100px;
 }
 
+.header-content-container {
+	max-width: 1200px;
+	margin: auto;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
 .main-header h1 {
+	padding-top: 22px;
 	color: #ffffff;
 	font-size: 3em;
 }
 
-.main-input {
-	backgruond: #ffffff;
+.main-material-card {
+	width: 900px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 40px;
 }
+
+.main-input {
+	background: #ffffff;
+}
+
+
+
+
+
+    material-content {
+      top: 192px;
+    }
+    .material-toolbar-tools {
+      padding-top: 80px;
+    }
