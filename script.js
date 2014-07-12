@@ -52,7 +52,6 @@ angular.module('app', ['ngMaterial'])
 		return total;
 	}
 })
-<<<<<<< HEAD
 .filter('math', function(multiplication, addition) {
 	return function(expr) {
 		if(expr) {
@@ -61,11 +60,7 @@ angular.module('app', ['ngMaterial'])
 			return expr;
 		}
 	}
-=======
-.controller('ctrl', function($scope, math) {
-	$scope.calculate = math;
 })
-
 .directive('ig', function() {
   return {
     restrict: 'E',
@@ -78,5 +73,4 @@ angular.module('app', ['ngMaterial'])
                 '<input id="{{fid}}" type="text" ng-model="data.description">' +
               '</div>',
   }
->>>>>>> origin/master
 });
