@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+	<title>MATH</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.min.js"></script>
+	<script type="text/javascript" src="script.js"></script>
+</head>
+<body>
+	<h1>MATH MADDAFAKKA</h1>
+    <input ng-model="expression">
+    <div ng-bind="expression | math"></div>
+</body>
+</html>
