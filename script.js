@@ -63,12 +63,31 @@ angular.module('app', ['ngMaterial'])
 })
 .controller('controller', function($scope, $templateCache, $materialToast) {
 	$scope.copy = function() {
-		$scope.expression = '';
 		$materialToast({
 	    	template: $templateCache.get('toasts/copied.html'),
 	    	duration: 2000,
 	      	position: 'bottom'
 	    });
+
+		
+
+	}
+
+	$scope.clear = function() {
+		$scope.expression = '';
+		$('#resultink').addClass('inkspill');
+		$('.output').addClass('fadeout');
+		setTimeout(function() {
+				$('#resultink').removeClass('inkspill');
+				$('#resultink').addClass('inkspillremove');
+				
+				setTimeout(function() {
+					$('#resultink').removeClass('inkspillremove');
+				}, 400);
+
+				$('.output').removeClass('fadeout');
+		}, 500);
+
 	}
 })
 .directive('ig', function() {
@@ -87,5 +106,5 @@ angular.module('app', ['ngMaterial'])
   }
 })
 .run(function($templateCache) {
-	$templateCache.put('toasts/copied.html', '<div class="toast-text">Copied<div class="toast-action" ng-click="closeToast()">Close</div></div>')
+	$templateCache.put('toasts/copied.html', '<div class="toast-text">Copied to clipboard</div>')
 });

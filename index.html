@@ -4,37 +4,53 @@
 	<title>MATH</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
 
-	<script src='http://www.polymer-project.org/components/platform/platform.js'></script>
-	<link rel="import" href="http://www.polymer-project.org/components/paper-ripple/paper-ripple.html">
 	<link rel="import" href="http://www.polymer-project.org/components/core-icons/core-icons.html">
+	<link rel="import" href="http://www.polymer-project.org/components/core-toolbar/core-toolbar.html">
+	<link rel="import" href="http://www.polymer-project.org/components/paper-icon-button/paper-icon-button.html">
+	<link rel="import" href="http://www.polymer-project.org/components/paper-tabs/paper-tabs.html">
+
+	<link href="http://www.polymer-project.org/components/paper-button/paper-button.html" rel="import">
+
 	<link rel="import" href="http://www.polymer-project.org/components/font-roboto/roboto.html">
-		
-	<link href='https://fonts.googleapis.com/css?family=RobotoDraft:400,500,700,400italic' rel='stylesheet' type='text/css'>
 </head>
 <body ng-controller="controller">
-	<header class="main-header">
-		<div class="header-content-container">
-			<h1>Math Solver</h1>
-		</div>
-	</header>
+
+	<core-toolbar class="medium-tall header">
+  
+	    <div flex>Math Solver</div>
+	    <paper-icon-button icon="more-vert"></paper-icon-button>
+	    
+	    <div class="bottom fit header-tabs" horizontal layout>
+	    
+	      <paper-tabs selected="0" flex style="max-width: 600px;">
+	    
+	        <paper-tab>APPLICATION</paper-tab>
+	        <paper-tab>SOURCE CODE</paper-tab>
+	        <paper-tab>ABOUT</paper-tab>
+	        
+	      </paper-tabs>
+	      
+	    </div>
+  
+  	</core-toolbar>
 
 	<div class="content-area">
 	
 		<material-card class="main-material-card">
-		<paper-ripple fit></paper-ripple>
+
+		<div id="resultink"></div>
+
 			<div class="main-input-container">
+
 				<div class="material-input-group-theme-light material-input-group main-input">
 	                <label for="i6">Your math problem</label>
 	                <input class="main-input-actual" id="i6" type="text" ng-model="expression">
-	<!--
-	                <button class="material-button material-button-fab equals-fab" style="position: static; display: block">
-	                	<div style="font-size: 1.4em; margin-top: -10px;">=</div>
-			      	</button>
-	-->
 
 	            </div>
+
 			</div>
-	        <button class="material-button material-button-raised material-button-colored clear-button">Clear</button>
+
+	        <paper-button ng-click="clear()" raisedButton class="clear-button colored" label="Clear"></paper-button>
 	    </material-card>
 
 	    <material-card class="answer-material-card">
@@ -43,16 +59,16 @@
 		    	<span class="output" ng-bind="expression | math"></span>
 		   	</div>
 		   	<div class="answer-right">
-		   		<button ng-click="copy()" class="material-button material-button-flat copy-button">Copy</button>
+		   		<paper-button ng-click="copy()" class="copy-button" label="Copy"></paper-button>
 		   	</div>
 
 		   	<div class="clearfix"/>
 	    </material-card>
 
     </div>
-
-	<script type="text/javascript" src="big-ass-angular.js"></script>
 	
+	<script type="text/javascript" src="big-ass-angular-and-polymer.js"></script>
+
 	<script type="text/javascript" src="script.js"></script>
 	<script type="text/javascript" src="material-js.js"></script>
 
