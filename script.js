@@ -61,6 +61,16 @@ angular.module('app', ['ngMaterial'])
 		}
 	}
 })
+.controller('controller', function($scope, $templateCache, $materialToast) {
+	$scope.copy = function() {
+		$scope.expression = '';
+		$materialToast({
+	    	template: $templateCache.get('toasts/copied.html'),
+	    	duration: 2000,
+	      	position: 'bottom'
+	    });
+	}
+})
 .directive('ig', function() {
   return {
     restrict: 'E',
@@ -75,4 +85,7 @@ angular.module('app', ['ngMaterial'])
                 '<input id="{{fid}}" type="text" ng-model="expression">' +
               '</div>',
   }
+})
+.run(function($templateCache) {
+	$templateCache.put('toasts/copied.html', '<div class="toast-text">Copied<div class="toast-action" ng-click="closeToast()">Close</div></div>')
 });

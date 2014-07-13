@@ -4,35 +4,52 @@
 	<title>MATH</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
 
-	
+	<script src='http://www.polymer-project.org/components/platform/platform.js'></script>
+	<link rel="import" href="http://www.polymer-project.org/components/paper-ripple/paper-ripple.html">
+	<link rel="import" href="http://www.polymer-project.org/components/core-icons/core-icons.html">
+	<link rel="import" href="http://www.polymer-project.org/components/font-roboto/roboto.html">
 		
 	<link href='https://fonts.googleapis.com/css?family=RobotoDraft:400,500,700,400italic' rel='stylesheet' type='text/css'>
 </head>
-<body>
+<body ng-controller="controller">
 	<header class="main-header">
 		<div class="header-content-container">
 			<h1>Math Solver</h1>
 		</div>
 	</header>
+
+	<div class="content-area">
 	
-	<material-card class="main-material-card">
-		<div class="main-input-container">
-			<div class="material-input-group-theme-light material-input-group main-input">
-                <label for="i6">Your math problem</label>
-                <input id="i6" type="text" ng-model="expression">
+		<material-card class="main-material-card">
+		<paper-ripple fit></paper-ripple>
+			<div class="main-input-container">
+				<div class="material-input-group-theme-light material-input-group main-input">
+	                <label for="i6">Your math problem</label>
+	                <input class="main-input-actual" id="i6" type="text" ng-model="expression">
+	<!--
+	                <button class="material-button material-button-fab equals-fab" style="position: static; display: block">
+	                	<div style="font-size: 1.4em; margin-top: -10px;">=</div>
+			      	</button>
+	-->
 
-                <button class="material-button material-button-fab" style="position: static; display: block">
-                	<div style="font-size: 1.4em; margin-top: -10px;">=</div>
-		      	</button>
+	            </div>
+			</div>
+	        <button class="material-button material-button-raised material-button-colored clear-button">Clear</button>
+	    </material-card>
 
-            </div>
-		</div>
-    </material-card>
+	    <material-card class="answer-material-card">
+	    	<div class="answer-left">
+		    	<span class="output-before">Answer:</span>
+		    	<span class="output" ng-bind="expression | math"></span>
+		   	</div>
+		   	<div class="answer-right">
+		   		<button ng-click="copy()" class="material-button material-button-flat copy-button">Copy</button>
+		   	</div>
 
-    <material-card class="answer-material-card">
-    	<span class="output-before">Answer:</span>
-    	<span class="output" ng-bind="expression | math"></span>
-    </material-card>
+		   	<div class="clearfix"/>
+	    </material-card>
+
+    </div>
 
 	<script type="text/javascript" src="big-ass-angular.js"></script>
 	
