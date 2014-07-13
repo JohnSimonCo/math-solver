@@ -11,20 +11,28 @@
 <body>
 	<header class="main-header">
 		<div class="header-content-container">
-			<h1>Math Motherfucker</h1>
+			<h1>Math Solver</h1>
 		</div>
 	</header>
 	
 	<material-card class="main-material-card">
+		<div class="main-input-container">
+			<div class="material-input-group-theme-light material-input-group main-input">
+                <label for="i6">Your math problem</label>
+                <input id="i6" type="text" ng-model="expression">
 
-		<ig fid="t1" hint="Your math problem" class="material-input-group-theme-light" ng-model="expression"></ig>
+                <button class="material-button material-button-fab" style="position: static; display: block">
+                	<div style="font-size: 1.4em; margin-top: -10px;">=</div>
+		      	</button>
 
+            </div>
+		</div>
     </material-card>
 
-
-
-
-    <div class="result" ng-bind="expression | math"></div>
+    <material-card class="answer-material-card">
+    	<span class="output-before">Answer:</span>
+    	<span class="output" ng-bind="expression | math"></span>
+    </material-card>
 
 	<script type="text/javascript" src="big-ass-angular.js"></script>
 	

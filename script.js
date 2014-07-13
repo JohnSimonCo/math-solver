@@ -67,11 +67,12 @@ angular.module('app', ['ngMaterial'])
     replace: true,
     scope: {
       hint: '@',
+      model: '@',
       fid: '@'
     },
     template: '<div class="material-input-group">' +
                 '<label for="{{fid}}">{{hint}}</label>' +
-                '<input id="{{fid}}" type="text" ng-model="data.description">' +
+                '<input id="{{fid}}" type="text" ng-model="expression">' +
               '</div>',
   }
 });

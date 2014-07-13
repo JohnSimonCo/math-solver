@@ -5,11 +5,11 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
 
 body {
 	font-family: 'RobotoDraft' Arial, sans-serif;
-	background: #FAFAFA;
+	background: #eeeeee;
 }
 
 .main-header {
-	background: #3f51b5;
+	background: #ff5722;
 	width: 100%;
 	height: 100px;
 }
@@ -28,23 +28,42 @@ body {
 }
 
 .main-material-card {
+	height: 170px;
+	background: #ffffff;
 	width: 900px;
 	margin-left: auto;
 	margin-right: auto;
 	margin-top: 40px;
 }
 
-.main-input {
-	background: #ffffff;
+
+.main-input-container {
+	width: 276px;
+	margin: auto;
 }
 
+.main-input {
+	font-weight: 100;
+	padding: 20px;
+	font-size: 2em;
+}
 
+.answer-material-card {
+	padding: 40px;
+	background: #ffffff;
+	width: 900px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 40px;
+}
 
+.output-before {
+	font-size: 1.4em;
+	margin-bottom: 10px;
+	color: #777;
+}
 
-
-    material-content {
-      top: 192px;
-    }
-    .material-toolbar-tools {
-      padding-top: 80px;
-    }
+.output {
+	padding-left: 12px;
+	font-size: 1.8em;
+}
